@@ -1,9 +1,9 @@
 {
-  "name": "KuiklyToastOhos",
+  "name": "@yuki8273/kuikly-toast",
   "version": "1.0.0",
   "description": "KuiklyToast HarmonyOS Module",
   "main": "Index.ets",
-  "author": "",
+  "author": "yuki8273",
   "license": "MIT",
   "dependencies": {
     "@kuikly-open/render": ">=2.7.0"
