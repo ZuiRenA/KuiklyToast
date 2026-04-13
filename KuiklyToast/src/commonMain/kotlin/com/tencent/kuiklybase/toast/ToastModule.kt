@@ -13,6 +13,10 @@ class ToastModule : Module() {
     private var offsetX: Int = 0
     private var offsetY: Int = 0
     private var image: String? = null
+    private var backgroundColor: String? = null
+    private var textColor: String? = null
+    private var fontSize: Int = 0
+    private var borderRadius: Int = 0
 
     fun setText(text: String?): ToastModule {
         this.text = text
@@ -44,6 +48,26 @@ class ToastModule : Module() {
         return this
     }
 
+    fun setBackgroundColor(color: String): ToastModule {
+        this.backgroundColor = color
+        return this
+    }
+
+    fun setTextColor(color: String): ToastModule {
+        this.textColor = color
+        return this
+    }
+
+    fun setFontSize(size: Int): ToastModule {
+        this.fontSize = size
+        return this
+    }
+
+    fun setBorderRadius(radius: Int): ToastModule {
+        this.borderRadius = radius
+        return this
+    }
+
     fun showToast() {
         val params = JSONObject().apply {
             text?.let { put("text", it) }
@@ -52,6 +76,10 @@ class ToastModule : Module() {
             put("offsetX", offsetX)
             put("offsetY", offsetY)
             image?.let { put("image", it) }
+            backgroundColor?.let { put("backgroundColor", it) }
+            textColor?.let { put("textColor", it) }
+            if (fontSize > 0) put("fontSize", fontSize)
+            if (borderRadius > 0) put("borderRadius", borderRadius)
         }
         toNative(false, METHOD_SHOW_TOAST, params.toString(), null, false)
         reset()
@@ -71,6 +99,10 @@ class ToastModule : Module() {
         offsetX = 0
         offsetY = 0
         image = null
+        backgroundColor = null
+        textColor = null
+        fontSize = 0
+        borderRadius = 0
     }
 
     companion object {
@@ -81,8 +113,8 @@ class ToastModule : Module() {
         const val DURATION_SHORT = 0
         const val DURATION_LONG = 1
 
-        const val GRAVITY_TOP = 48       // android.view.Gravity.TOP
-        const val GRAVITY_CENTER = 17    // android.view.Gravity.CENTER
-        const val GRAVITY_BOTTOM = 80    // android.view.Gravity.BOTTOM
+        const val GRAVITY_TOP = 48
+        const val GRAVITY_CENTER = 17
+        const val GRAVITY_BOTTOM = 80
     }
 }

@@ -58,12 +58,34 @@ internal class ToastDemoPage : BasePager() {
                     )
                 }
 
+                DemoButton("白色背景 Toast") {
+                    ctx.showToast(
+                        text = "白色背景样式",
+                        backgroundColor = "#FFFFFF",
+                        textColor = "#333333",
+                        borderRadius = 12
+                    )
+                }
+
+                DemoButton("自定义样式 Toast") {
+                    ctx.showToast(
+                        text = "自定义样式",
+                        gravity = ToastModule.GRAVITY_CENTER,
+                        backgroundColor = "#4F8FFF",
+                        textColor = "#FFFFFF",
+                        fontSize = 16,
+                        borderRadius = 20
+                    )
+                }
+
                 DemoButton("Builder 模式") {
                     ctx.toastModule
                         .setText("Builder 模式调用")
                         .setDuration(ToastModule.DURATION_SHORT)
-                        .setGravity(ToastModule.GRAVITY_BOTTOM)
-                        .setOffsetY(200)
+                        .setGravity(ToastModule.GRAVITY_CENTER)
+                        .setBackgroundColor("#FF4444")
+                        .setTextColor("#FFFFFF")
+                        .setBorderRadius(16)
                         .showToast()
                 }
             }

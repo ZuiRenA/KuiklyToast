@@ -22,6 +22,7 @@ import com.example.myapplication.adapter.KRThreadAdapter
 import com.example.myapplication.adapter.KRUncaughtExceptionHandlerAdapter
 import com.example.myapplication.module.KRBridgeModule
 import com.example.myapplication.module.KRShareModule
+import com.tencent.kuiklybase.toast.KRToastModule
 import org.json.JSONObject
 
 class KuiklyRenderActivity : AppCompatActivity(), KuiklyRenderViewBaseDelegatorDelegate {
@@ -76,6 +77,9 @@ class KuiklyRenderActivity : AppCompatActivity(), KuiklyRenderViewBaseDelegatorD
             }
             moduleExport(KRShareModule.MODULE_NAME) {
                 KRShareModule()
+            }
+            moduleExport(KRToastModule.MODULE_NAME) {
+                KRToastModule()
             }
         }
     }

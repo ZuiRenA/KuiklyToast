@@ -26,5 +26,6 @@ rootProject.name = "KuiklyToast"
 include(":androidApp")
 include(":shared")
 include(":KuiklyToast")
+include(":KuiklyToastAndroid")
 // include(":h5App")
 // include(":miniApp")

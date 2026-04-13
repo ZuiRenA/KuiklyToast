@@ -1,0 +1,10 @@
+{
+  "module": {
+    "name": "KuiklyToastOhos",
+    "type": "har",
+    "deviceTypes": [
+      "default",
+      "tablet"
+    ]
+  }
+}

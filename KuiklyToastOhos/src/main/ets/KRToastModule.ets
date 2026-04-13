@@ -26,6 +26,7 @@ export class KRToastModule extends KuiklyRenderBaseModule {
     const text = (json['text'] as string) || '';
     const duration = (json['duration'] as number) || 0;
     const gravity = (json['gravity'] as number) || 80;
+    const offsetX = (json['offsetX'] as number) || 0;
     const offsetY = (json['offsetY'] as number) || 0;
 
     let alignment: Alignment = Alignment.Bottom;
@@ -41,7 +42,7 @@ export class KRToastModule extends KuiklyRenderBaseModule {
       message: text,
       duration: toastDuration,
       alignment: alignment,
-      offset: { dx: 0, dy: offsetY }
+      offset: { dx: offsetX, dy: offsetY }
     });
   }
 
